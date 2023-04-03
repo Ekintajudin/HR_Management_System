@@ -1,0 +1,48 @@
+<div class="container">
+
+
+    <!--showmessage alert for delete-->
+    <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>{{successmsg}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <br><br>
+    <div align="center">
+      <img  src="/assets/logo.jpg" style="height: 100px;">
+  <br><br>
+    <table class="table">
+      <thead>
+        <tr>
+          <td align= "center" scope="col">STAFF ID</td>
+          <td align= "center" scope="col">STAFF NAME</td>
+          <td align= "center" scope="col">DATE</td>
+          <td align= "center" scope="col">AMOUNT</td>
+          <td align= "center" scope="col">REASON</td>
+  
+          <td scope="col"></td>
+          <td scope="col"></td>
+  
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = 'let us of listData'>
+          <td align= "center"scope="row">{{us.id}}</td>
+          <td align= "center">{{us.staff_name}}</td>
+          <td align= "center">{{us.date}}</td>
+          <td align= "center">{{us.amount}}</td>
+          <td align= "center">{{us.reason}}</td>
+  
+          <td></td>
+          <td>
+  
+            <button  (click)="deleteId(us.id)">REMOVE</button>
+            &nbsp;
+            <button [routerLink]="['/updateclaim', us.id]">EDIT🧑‍🎓</button>
+          </td>
+        </tr>
+  
+      </tbody>
+    </table>
+  
+  </div>
+  

@@ -1,0 +1,51 @@
+<div id="outPopUp" class="">
+    <div class="">
+  
+        <!--to show error alert-->
+        <div *ngIf="errormsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>{{errormsg}}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+  
+          <!--to show success alert-->
+          <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{successmsg}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+  <br><br>
+          <div align="center">
+            <img  src="/assets/logo.jpg" style="height: 100px;">
+            <br><br>
+        <form  [formGroup]="staffForm" >
+        
+          <br>
+          <div class="col-lg-4 mx-auto">
+            <input type="text" class="form-control" formControlName="staff_name" placeholder="Staff Name">
+          </div>
+          <br>
+          <div class="col-lg-4 mx-auto">
+            <input type="text" class="form-control"  formControlName="staff_email" placeholder="Staff Email">
+          </div>
+          <br>
+          <div class="col-lg-4 mx-auto">
+            <input type="text" class="form-control"  formControlName="staff_salary" placeholder="Staff Salary">
+          </div>
+          <br>
+          <div class="col-lg-4 mx-auto">
+            <input type="text" class="form-control"  formControlName="staff_phone" placeholder="Staff Phone Number">
+          </div>
+          <br>
+          <div class="col-lg-4 mx-auto">
+            <input type="text" class="form-control"  formControlName="staff_address" placeholder="Staff Address">
+          </div>
+          <br>
+  
+          <div  align="center" class="col-lg-15 mt-2" *ngIf="!getparamid" (click)="staffUpdate()">
+            <button >Confirm Update🧑‍🎓</button>
+        </div>
+  
+        </form>
+  
+      </div>
+    </div>
+  
